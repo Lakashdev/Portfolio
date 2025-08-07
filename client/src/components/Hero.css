@@ -1,0 +1,48 @@
+/* 1. Prevent image overflow and center it */
+.hero-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* 2. Make sure the hero section doesn’t overflow horizontally */
+.hero-section {
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  overflow-x: hidden;
+}
+
+/* 3. Make the image responsive and centered */
+.hero-image {
+  max-width: 320px;
+  width: 80%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* 4. Media queries for responsive sizing */
+@media (max-width: 1199.98px) {
+  .hero-image {
+    max-width: 300px;
+  }
+}
+@media (max-width: 991.98px) {
+  .hero-image {
+    max-width: 270px;
+  }
+}
+@media (max-width: 767.98px) {
+  .hero-image {
+    max-width: 220px;
+  }
+}
+@media (max-width: 575.98px) {
+  .hero-image {
+    max-width: 180px;
+  }
+}

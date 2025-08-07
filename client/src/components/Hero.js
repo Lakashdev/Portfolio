@@ -20,13 +20,12 @@ function Hero() {
           </div>
 
           {/* Right: Image */}
-          <div className="col-md-6 text-center mt-4 mt-md-0">
+          <div className="col-md-5 offset-md-1 hero-image-container mt-4 mt-md-0">
             <img
-              src={profile}
-              alt="Lakash Maharjan"
-              className="img-fluid rounded-circle shadow"
-              style={{ maxWidth: "250px" }}
-            />
+                src={profile}
+                alt="Lakash Maharjan"
+                className="img-fluid rounded-circle shadow hero-image"
+              />
           </div>
         </div>
       </div>
