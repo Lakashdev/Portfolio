@@ -1,0 +1,12 @@
+#sidebar-wrapper {
+  min-height: 100vh;
+}
+
+#sidebar-wrapper .list-group-item {
+  border: none;
+  transition: background-color 0.2s;
+}
+
+#sidebar-wrapper .list-group-item:hover {
+  background-color: #495057;
+}
