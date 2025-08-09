@@ -1,0 +1,74 @@
+/* Timeline spine */
+.timeline {
+  position: relative;
+  padding-left: 50px; /* space for dots & line */
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 26px; /* center line under dots */
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #00ff88, #003d2a);
+  border-radius: 2px;
+}
+
+.tl-item {
+  position: relative;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.tl-item.tl-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tl-dot {
+  position: absolute;
+  left: 18px; /* align over line */
+  top: 18px;
+  width: 16px;
+  height: 16px;
+  background-color: #00ff88;
+  border-radius: 50%;
+  border: 2px solid #062c1f;
+  box-shadow: 0 0 12px #00ff88aa;
+}
+
+.tl-card {
+  padding: 16px;
+  margin-left: 50px; /* shift card right of timeline */
+}
+
+
+/* Subtle text color helper */
+.text-light-50 { color: rgba(255,255,255,0.7); }
+
+/* Tech badges (green outline, glow on hover) */
+.tech-badge {
+  background: rgba(0, 255, 136, 0.08);
+  border: 1px solid #00ff88;
+  color: #c9fbe6;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.tech-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px #00ff8844;
+}
+
+/* Card hover lift */
+.tl-card:hover {
+  box-shadow: 0 0 18px #00ff8833;
+}
+
+/* Responsive spacing */
+@media (max-width: 576px) {
+  .timeline { padding-left: 18px; margin-left: 10px; }
+  .timeline::before { left: 18px; }
+  .tl-dot { left: 10px; width: 14px; height: 14px; }
+}

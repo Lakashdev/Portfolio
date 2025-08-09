@@ -21,6 +21,15 @@ function AdminLayout({ children }) {
           <Link to="/admin/dashboard/add" className="list-group-item list-group-item-action bg-dark text-white">
             Add Project
           </Link>
+          <Link to="/admin/dashboard/techstack" className="list-group-item list-group-item-action bg-dark text-white">
+            Tech Stack
+          </Link>
+          <Link to="/admin/dashboard/education" className="list-group-item list-group-item-action bg-dark text-white">
+            Education
+          </Link>
+          <Link to="/admin/dashboard/experience" className="list-group-item list-group-item-action bg-dark text-white">
+            Add Experience
+          </Link>
           <button 
             className="list-group-item list-group-item-action bg-dark text-white"
             onClick={() => {

@@ -33,7 +33,7 @@ function AdminAddProject() {
         },
       });
 
-      setMessage("✅ Project added successfully!");
+      setMessage("Project added successfully!");
       setForm({
         title: "",
         description: "",
@@ -43,7 +43,7 @@ function AdminAddProject() {
         image: "",
       });
     } catch (err) {
-      setMessage("❌ Failed to add project.");
+      setMessage("Failed to add project.");
     }
   };
 

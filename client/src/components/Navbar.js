@@ -1,8 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaLinkedin, FaFacebook, FaGithub } from 'react-icons/fa';
+import { Link as ScrollLink } from 'react-scroll';
 
 export default function Navbar() {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-black shadow-sm fixed-top">
       <div className="container-fluid px-4">
@@ -24,21 +28,76 @@ export default function Navbar() {
 
         {/* Collapsible content */}
         <div className="collapse navbar-collapse justify-content-between" id="navbarContent">
-
           {/* Navigation Links */}
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link text-light" to="/">Home</Link>
+              <ScrollLink
+                to="home"               // must match <Element name="hero">
+                smooth={true}
+                duration={500}
+                offset={-80}            // adjust if you have a fixed navbar
+                className="nav-link text-light"
+                style={{ cursor: "pointer" }}
+              >
+                Home
+              </ScrollLink>
             </li>
+
             <li className="nav-item">
-              <Link className="nav-link text-light" to="/case-studies">Case Studies</Link>
+              <ScrollLink
+                to="experience"         // must match <Element name="experience">
+                smooth={true}
+                duration={500}
+                offset={-80}            // optional: adjust for fixed navbar height
+                className="nav-link text-light"
+                style={{ cursor: "pointer" }}
+              >
+                Experience
+              </ScrollLink>
             </li>
+
             <li className="nav-item">
-              <Link className="nav-link text-light" to="/projects">Projects</Link>
+              {isHome ? (
+                <ScrollLink
+                  to="techstack"
+                  smooth={true}
+                  duration={500}
+                  className="nav-link text-light"
+                  style={{ cursor: "pointer" }}
+                >
+                  Tech Stack
+                </ScrollLink>
+              ) : (
+                <Link className="nav-link text-light" to="/#techstack">Tech Stack</Link>
+              )}
             </li>
+            
             <li className="nav-item">
-              <Link className="nav-link text-light" to="/about">About</Link>
+              <ScrollLink
+                to="projects"         // must match <Element name="projects">
+                smooth={true}
+                duration={500}
+                offset={-80}          // optional: adjust for fixed navbar height
+                className="nav-link text-light"
+                style={{ cursor: "pointer" }}
+              >
+                Projects
+              </ScrollLink>
             </li>
+
+            <li className="nav-item">
+               <ScrollLink
+                to="about"         // must match <Element name="projects">
+                smooth={true}
+                duration={500}
+                offset={-80}          // optional: adjust for fixed navbar height
+                className="nav-link text-light"
+                style={{ cursor: "pointer" }}
+              >
+                About Me
+              </ScrollLink>
+            </li>
+
             <li className="nav-item">
               <Link className="nav-link text-light" to="/contact">Contact</Link>
             </li>

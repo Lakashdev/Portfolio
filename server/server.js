@@ -4,6 +4,10 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const projectRoutes = require("./routes/projectRoutes");
 const authRoutes = require("./routes/authRoutes");
+const techStackRoutes = require('./routes/techStack');
+const educationRoutes = require('./routes/educationRoutes');
+const experienceRoutes = require('./routes/experienceRoute');
+const achievementRoutes = require('./routes/acvhivementRoutes');
 
 
 dotenv.config();
@@ -19,6 +23,13 @@ app.get("/", (req, res) => {
 });
 app.use("/api/projects", projectRoutes);
 app.use("/api/auth", authRoutes);
+
+app.use('/api/techstack', techStackRoutes);
+
+app.use('/api/education', educationRoutes);
+
+app.use('/api/experience', experienceRoutes);
+app.use('/api/achievements', achievementRoutes);
 
 
 const PORT = process.env.PORT || 5000;

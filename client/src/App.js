@@ -11,6 +11,9 @@ import AdminLogin from "./admin/AdminLogin";
 import AdminDashboard from "./admin/AdminDashboard";
 import AdminProjects from "./admin/AdminProjects";
 import AdminAddProject from "./admin/AdminAddProject";
+import AdminAddTechStack from "./admin/AdminAddTechStack";
+import AdminEducation from "./admin/AdminEducation";
+import AdminExperience from "./admin/adminAddExpereince";
 
 
 function App() {
@@ -46,6 +49,9 @@ function App() {
       <Route path="/admin/dashboard" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
       <Route path="/admin/dashboard/projects" element={<ProtectedRoute><AdminProjects /></ProtectedRoute>} />
       <Route path="/admin/dashboard/add" element={<ProtectedRoute><AdminAddProject /></ProtectedRoute>} />
+      <Route path="/admin/dashboard/techstack" element={<ProtectedRoute><AdminAddTechStack /></ProtectedRoute>} />
+      <Route path="/admin/dashboard/education" element={<ProtectedRoute><AdminEducation /></ProtectedRoute>} />
+      <Route path="/admin/dashboard/experience" element={<ProtectedRoute><AdminExperience /></ProtectedRoute>} />
     </Routes>
   );
 }
